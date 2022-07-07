@@ -36,7 +36,6 @@ function AirPortFlights({navigation}){
       <TextInput value={timefrom} onChangeText={settimefrom} placeholder="Time from" keyboardType='numeric' />
       <TextInput value={timeto} onChangeText={settimeto} placeholder="Time to" keyboardType='numeric' />
       <Button title="Search" onPress={ getapidata} />
-      <Text>{debug}</Text>
       <ScrollView>
       {
         apidata.map((obj, index)=> {

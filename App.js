@@ -10,7 +10,7 @@ import AirPortFlights from './components/Air.jsx';
 
 const Stack = createNativeStackNavigator();
 //      <Stack.Screen name="Home" component={SprintScreen}/>
-export default function App({ navigation}) {
+export default function App ({ navigation}) {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
