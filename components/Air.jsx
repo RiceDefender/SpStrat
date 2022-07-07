@@ -11,12 +11,15 @@ function AirPortFlights({navigation}){
     const [timefrom, settimefrom] = useState();
     const [timeto, settimeto] = useState();
     const [airportname, setairportname] = useState();
+    const [debug, setdebug] = useState();
 
     const getapidata = async () => {
       try {
-        axios.get("https://opensky-network.org/api/flights/arrival?airport=LSZH&begin=1656844210&end=1657111499")
+        setdebug("https://opensky-network.org/api/flights/arrival?airport="+ airportname +"&begin="+timefrom+"&end="+ timeto)
+        axios.get("https://opensky-network.org/api/flights/arrival?airport="+ airportname +"&begin="+timefrom+"&end="+ timeto)
         //"https://opensky-network.org/api/flights", {params: {airport: airportname, begin: settimefrom, end: settimeto}}
           .then((response) => {
+            
             setapidata(response.data)
             console.log(response.data)
           });
@@ -33,7 +36,7 @@ function AirPortFlights({navigation}){
       <TextInput value={timefrom} onChangeText={settimefrom} placeholder="Time from" keyboardType='numeric' />
       <TextInput value={timeto} onChangeText={settimeto} placeholder="Time to" keyboardType='numeric' />
       <Button title="Search" onPress={ getapidata} />
-      <Button title="Go back" onPress={() => navigation.navigate('Home')} />
+      <Text>{debug}</Text>
       <ScrollView>
       {
         apidata.map((obj, index)=> {
