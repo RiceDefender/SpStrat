@@ -1,10 +1,20 @@
 {
   "expo": {
     "name": "SpSprint",
-    "slug": "SpSprint",
+    "icon": "./playstore.png" ,
+    "slug": "spsprint",
+    "owner": "ricedefender",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    
+    "android": {
+      "package": "ch.ricecompany.spsprint"
+    }
   }
+  
 }
